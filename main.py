@@ -4,8 +4,10 @@ def get_book_text(filepath):
     return file_contents
 
 
-def main(relative_file_path):
-    book_text = get_book_text(relative_file_path)
-    print (book_text)
+def word_count(filepath):
+    book_text = get_book_text(filepath)
+    word_list = book_text.split()
+    word_count = len(word_list)
+    print(f"{word_count} words found in the document")
 
-main("books/frankenstein.txt")
+word_count("books/frankenstein.txt")
