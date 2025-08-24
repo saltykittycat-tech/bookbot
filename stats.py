@@ -1,7 +1,7 @@
 def word_count(book_text):
     word_list = book_text.split()
     word_count = len(word_list)
-    print(f"{word_count} words found in the document")
+    print(f"Found {word_count} total words")
 
 def get_character_count(book_text):
     character_count={}
@@ -14,3 +14,16 @@ def get_character_count(book_text):
         else:
             character_count[character] = 1
     return character_count
+
+def sort_on(items):
+    return items["amount"]
+
+def dictionary_to_list(character_count):
+    list = []
+    for key in character_count:
+        char = key
+        amount = character_count[key]
+        char_dictionary = {"char":char, "amount":amount}
+        list.append(char_dictionary)
+    list.sort(reverse=True, key=sort_on)
+    return list
